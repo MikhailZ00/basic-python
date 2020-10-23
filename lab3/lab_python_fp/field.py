@@ -14,9 +14,11 @@ def field(items, *args):
         index = 0
         arr = []
         for index in range(len(goods)):
+            if (args[0] not in goods[index].keys()):
+                continue
             arr.append(goods[index][args[0]])
             yield index
-        print(", ".join(arr))
+        print(", ".join(map(str, arr)))
     else:
         arr = []
         for dicts in goods:
@@ -31,6 +33,6 @@ def field(items, *args):
         print(", ".join(map(str, arr)))
 
 
-gen = field(goods, 'price', 'title')
+gen = field(goods, 'price')
 for i in gen:
     i

@@ -19,3 +19,6 @@ def gen_random(num_count, begin, end):
     for i in gen:
         i
     return arr
+
+
+# print(gen_random(5, 1, 10))
