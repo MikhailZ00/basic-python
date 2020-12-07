@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Форма</title>
+	<link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-storage.js"></script>
+
+	<meta>
+</head>
+<body>
+	<div class="form-wrap">
+<fieldset>
+	<legend>Регистрация</legend>
+  <form>
+    <div>
+      <input type="text" id="name" name="name" placeholder="Имя" required type="text" pattern="[A-Za-zА-Яа-я]+" required>
+    </div>
+    <div>
+      <input type="text" id="surname" name="surname" placeholder="Фамилия" required type="text" pattern="[A-Za-zА-Яа-я]+" required>
+    </div>
+    <div class="flex-radio">
+      <div class="radio container">
+      <label> мужской
+        <input type="radio" id="male" name="sex" value="мужской">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="radio container">
+      <label> женский
+        <input type="radio" id="female"  name="sex" value="женский">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    </div>
+    <div>
+      <input type="email" id="email" name="email" placeholder="E-mail" required>
+    </div>
+    <div>
+      <select name="country" id="country">
+        <option>Страна</option>
+        <option value="Россия">Россия</option> 
+        <option value="Украина">Украина</option> 
+        <option value="Беларусь">Беларусь</option> 
+      </select> 
+      <div class="select-arrow"></div> 
+    </div> 
+</form>
+<div class="formButton">
+<p id="errortext"></p>
+<button onclick="main();false">Отправить</button>
+</div>
+</fieldset>
+ </div>
+	<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyB5FYJlNegWyVHyE2BA9U8xGyPcOtJy0-c",
+    authDomain: "registration-b84d6.firebaseapp.com",
+    databaseURL: "https://registration-b84d6.firebaseio.com",
+    projectId: "registration-b84d6",
+    storageBucket: "registration-b84d6.appspot.com",
+    messagingSenderId: "417975170582",
+    appId: "1:417975170582:web:f546eb762c6fc00823a737",
+    measurementId: "G-7LRRD0QVT8"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+<script src="script.js"></script>
+</body>
+</html>
